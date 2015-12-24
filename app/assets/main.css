@@ -396,7 +396,11 @@ html {
 html,
 body {
   height: 100%;
+  color: #515253;
+  background-color: #f5f7fa;
 }
+
+
 .wrapper {
   position: relative;
   width: 100%;
