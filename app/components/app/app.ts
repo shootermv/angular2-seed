@@ -10,7 +10,7 @@ import {AboutCmp} from '../about/about';
 import {DashboardCmp} from '../dashboard/dashboard';
 import {NameList} from '../../services/name_list';
 import {TopNavbarCmp} from '../layout/top-navbar/top-navbar';
-
+import {SideBarCmp} from '../layout/sidebar/sidebar';
 
 @Component({
   selector: 'app',
@@ -18,7 +18,7 @@ import {TopNavbarCmp} from '../layout/top-navbar/top-navbar';
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [ROUTER_DIRECTIVES, TopNavbarCmp]
+  directives: [ROUTER_DIRECTIVES, TopNavbarCmp, SideBarCmp]
 })
 @RouteConfig([
   { path: '/', component: HomeCmp, as: 'Home' },
