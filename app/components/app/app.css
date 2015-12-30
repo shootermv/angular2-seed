@@ -1,0 +1,5 @@
+/*override bootstrap*/
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}

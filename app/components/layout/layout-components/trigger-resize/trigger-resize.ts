@@ -7,6 +7,10 @@ import {Component} from 'angular2/core';
 export class TriggerResize {
   onClickMe(event) {
    event.preventDefault();
-   /aside-collapsed/.test(document.body.className) ? document.body.className = document.body.className.replace(' aside-collapsed','') :  document.body.className+=' aside-collapsed';
+   if (/aside-collapsed/.test(document.body.className) ) {
+       document.body.className = document.body.className.replace(' aside-collapsed','');
+   } else {
+       document.body.className+=' aside-collapsed';
+   }
   }
 }
