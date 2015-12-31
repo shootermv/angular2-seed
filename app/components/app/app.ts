@@ -5,7 +5,7 @@ import {
 } from 'angular2/router';
 // import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {HomeCmp} from '../home/home';
+
 import {AboutCmp} from '../about/about';
 import {WidgetsCmp} from '../widgets/widgets';
 import {DashboardCmp} from '../dashboard/dashboard';
@@ -22,7 +22,7 @@ import {SideBarCmp} from '../layout/sidebar/sidebar';
   directives: [ROUTER_DIRECTIVES, TopNavbarCmp, SideBarCmp, AboutCmp, WidgetsCmp]
 })
 @RouteConfig([
-  { path: '/', component: HomeCmp, as: 'Dashboard' },
+  { path: '/', component: DashboardCmp, as: 'Dashboard' },
   { path: '/dashboard', component: DashboardCmp, as: 'Dashboard' },
   { path: '/widgets', component: WidgetsCmp, as: 'Widgets' }
 ])
