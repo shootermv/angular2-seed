@@ -3,3 +3,6 @@
     text-decoration: none;
     background-color: transparent;
 }
+.navbar, .nav-wrapper {
+    min-height:55px;
+}

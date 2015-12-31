@@ -477,8 +477,8 @@ body {
     margin: -20px;
   }
 }
-.content-wrapper > h3,
-.content-wrapper > .content-heading {
+.content-wrapper  h3,
+.content-wrapper  .content-heading {
   font-size: 24px;
   line-height: 1.1;
   color: #929292;
@@ -489,8 +489,8 @@ body {
   background-color: #fafbfc;
   border-bottom: 1px solid #cfdbe2;
 }
-.content-wrapper > h3 > small,
-.content-wrapper > .content-heading > small {
+.content-wrapper  h3 > small,
+.content-wrapper  .content-heading > small {
   display: block;
   font-size: 12px;
   color: #909fa7;
