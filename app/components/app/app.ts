@@ -7,6 +7,7 @@ import {
 
 import {HomeCmp} from '../home/home';
 import {AboutCmp} from '../about/about';
+import {WidgetsCmp} from '../widgets/widgets';
 import {DashboardCmp} from '../dashboard/dashboard';
 import {NameList} from '../../services/name_list';
 import {TopNavbarCmp} from '../layout/top-navbar/top-navbar';
@@ -18,11 +19,11 @@ import {SideBarCmp} from '../layout/sidebar/sidebar';
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [ROUTER_DIRECTIVES, TopNavbarCmp, SideBarCmp]
+  directives: [ROUTER_DIRECTIVES, TopNavbarCmp, SideBarCmp, AboutCmp, WidgetsCmp]
 })
 @RouteConfig([
-  { path: '/', component: HomeCmp, as: 'Home' },
+  { path: '/', component: HomeCmp, as: 'Dashboard' },
   { path: '/dashboard', component: DashboardCmp, as: 'Dashboard' },
-  { path: '/about', component: AboutCmp, as: 'About' }
+  { path: '/widgets', component: WidgetsCmp, as: 'Widgets' }
 ])
 export class AppCmp {}
