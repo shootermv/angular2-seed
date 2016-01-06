@@ -1,4 +1,4 @@
-import {Component, Input, Attribute, ElementRef} from 'angular2/core'
+import {Component, Attribute, ElementRef} from 'angular2/core';
 
 @Component({
   selector: 'now',
@@ -10,13 +10,12 @@ import {Component, Input, Attribute, ElementRef} from 'angular2/core'
 export class NowCmp {
   private date;
   private format;
-  constructor(@Attribute("format") format, myElement: ElementRef) { 
+  constructor(@Attribute('format') format, myElement: ElementRef) {
     this.format = format;
-    this.date =  new Date(); 
-    let that= this;
+    this.date =  new Date();
     setInterval(() => {
-        that.date =  new Date();
+        this.date =  new Date();
      }, 1000);
-  } 
+  }
 
 }
