@@ -6,3 +6,9 @@
 .navbar, .nav-wrapper {
     min-height:55px;
 }
+
+.panel-default > .panel-heading {
+    color: #444444;
+    background-color: #ffffff;
+    border-color: #cfdbe2;
+}
