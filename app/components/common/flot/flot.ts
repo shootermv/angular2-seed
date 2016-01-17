@@ -2,11 +2,8 @@ import {Component} from 'angular2/core';
 
 @Component({
   selector: 'flot',
-  template: `
-      hi
-    `
+  template: `hi`
 })
-
 export class FlotCmp {
 
 }
