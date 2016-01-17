@@ -4,6 +4,7 @@ import {Component} from 'angular2/core';
   selector: 'flot',
   template: `hi`
 })
+
 export class FlotCmp {
 
 }
