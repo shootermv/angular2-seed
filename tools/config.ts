@@ -46,7 +46,8 @@ export const NPM_DEPENDENCIES = [
   { src: 'angular2/bundles/angular2.min.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST }, // use router.min.js with alpha47
   { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'Flot', inject: 'libs', dest: LIB_DEST},
+  { src: 'jquery/dist/jquery.js', inject: 'libs', dest: LIB_DEST},
+  { src: 'flot/jquery.flot.js', inject: 'libs', dest: LIB_DEST},
   { src: 'simple-line-icons/css/simple-line-icons.css', inject: true, dest: CSS_DEST },
   { src: 'font-awesome/css/font-awesome.css', inject: true, dest: CSS_DEST },
   { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, dest: CSS_DEST }
