@@ -9,4 +9,17 @@ import {FlotCmp} from '../common/flot/flot';
   styleUrls: ['./components/dashboard/dashboard.css'],
   directives: [CORE_DIRECTIVES, NowCmp, FlotCmp]
 })
-export class DashboardCmp {}
+export class DashboardCmp {
+  constructor() {
+    this.splineOptions = {
+            series: {
+                lines: { show: true },
+                points: {
+                    radius: 3,
+                    show: true
+                }
+            }
+    };
+    this.dataset = [{label: "line1",color:"blue",data:  [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]]}];
+  }   
+}

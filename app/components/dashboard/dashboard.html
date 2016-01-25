@@ -89,7 +89,7 @@
                </div>
                <div uib-collapse="panelChart9" class="panel-wrapper">
                   <div class="panel-body">
-                     <flot dataset="dash.splineData" options="dash.splineOptions" height="250px"></flot>
+                      <flot  [options]="splineOptions" [dataset]="dataset" height="220px" width="100%"></flot>
                   </div>
                </div>
             </div>
