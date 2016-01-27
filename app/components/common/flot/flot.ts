@@ -20,7 +20,8 @@ export class FlotCmp  implements AfterViewInit{
 
   ngAfterViewInit() {
       if(!FlotCmp.chosenInitialized) {
-        let plotArea = $(this.el.nativeElement).find('div').empty();
+        let plotArea = $(this.el.nativeElement).find('div');
+        plotArea.empty();
         plotArea.css({
             width: this.width,
             height: this.height
