@@ -84,10 +84,18 @@
             <!-- START widget-->
             <div id="panelChart9" ng-controller="DashboardController as dash" class="panel panel-default">
                <div class="panel-heading">
-                  <paneltool tool-collapse="tool-collapse" tool-refresh="traditional"></paneltool>
+                  <paneltool tool-collapse="tool-collapse" tool-refresh="traditional" class="pull-right">
+                        <a href="#" >         
+                            <em  class="fa fa-plus"  (click)="isCollapsed = !isCollapsed"></em>
+                            <!--<em  class="fa fa-minus ng-no-animation"></em>-->
+                        </a>
+                        <a href="#" > 
+                           <em class="fa fa-refresh"></em> 
+                        </a>
+                    </paneltool>
                   <div class="panel-title">Inbound visitor statistics</div>
                </div>
-               <div uib-collapse="panelChart9" class="panel-wrapper">
+               <div [collapse]="isCollapsed" class="panel-wrapper">
                   <div class="panel-body">
                       <flot  [options]="splineOptions" [dataset]="dataset" height="220px" width="100%"></flot>
                   </div>
