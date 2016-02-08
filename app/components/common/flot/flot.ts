@@ -6,11 +6,11 @@ import {Component, ElementRef, Input, AfterViewInit} from 'angular2/core';
 
 })
 
-export class FlotCmp  implements AfterViewInit{
+export class FlotCmp  implements AfterViewInit {
 
 
   static chosenInitialized = false;
-  
+
   @Input() private  options: any;
   @Input() private  dataset:any;
   @Input() private  width:string;
