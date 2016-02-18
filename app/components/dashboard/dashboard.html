@@ -86,7 +86,7 @@
                <div class="panel-heading">
                   <paneltool tool-collapse="tool-collapse" tool-refresh="traditional" class="pull-right">
                         <a href="#" >         
-                            <em  class="fa fa-plus"  (click)="isCollapsed = !isCollapsed"></em>
+                            <em  class="fa" [ngClass]="{'fa-minus': !isCollapsed, 'fa-plus': isCollapsed}" (click)="isCollapsed = !isCollapsed"></em>
                             <!--<em  class="fa fa-minus ng-no-animation"></em>-->
                         </a>
                         <a href="#" > 

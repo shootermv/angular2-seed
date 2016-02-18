@@ -3,6 +3,7 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 import {NowCmp} from '../common/now/now';
 import {FlotCmp} from '../common/flot/flot';
 import {CollapseCmp} from '../common/my-collapse/my-collapse';
+import {NgClass} from 'angular2/common';
 
 @Component({
   selector: 'dashboard',
