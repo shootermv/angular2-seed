@@ -30,7 +30,7 @@ export class CollapseCmp {
 
   }
   hide() {
-    this.measureHeight();  
+    this.measureHeight();
     this.height = this.h + 'px';
     setTimeout(() => {
         this.height = '0px';
