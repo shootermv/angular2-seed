@@ -4,17 +4,18 @@ import {NowCmp} from '../common/now/now';
 import {FlotCmp} from '../common/flot/flot';
 import {CollapseCmp} from '../common/my-collapse/my-collapse';
 import {FlotService} from '../../services/flotService';
-
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
 @Component({
   selector: 'dashboard',
   templateUrl: './components/dashboard/dashboard.html',
   styleUrls: ['./components/dashboard/dashboard.css'],
   directives: [CORE_DIRECTIVES, NowCmp, FlotCmp, CollapseCmp],
-  providers: [FlotService]
+  providers: [FlotService, HTTP_PROVIDERS]
 })
 export class DashboardCmp implements OnInit {
   private splineOptions:any;
   private dataset:any; 
+  private errorMessage:string;
   constructor(private _flotService: FlotService) {
     this.splineOptions = {
             series: {
@@ -25,9 +26,15 @@ export class DashboardCmp implements OnInit {
                 }
             }
     };
-    this.dataset = [{label: 'line1',color:'blue',data:this._flotService.getFlotEntries()}];
+    this.dataset = [{label: 'line1',color:'blue',data:null}];
   }//end of constructor
-  ngOnInit() {
-   // this._flotService.getFlotEntries().then(entries => this.dataset[0].data = entries);
+  getEntries() {
+    this._flotService.getFlotEntries().subscribe(
+                       entries => this.dataset[0].data = entries,
+                       error =>  this.errorMessage = <any>error);
+  } 
+    
+  ngOnInit() {  
+    this.getEntries() 
   } 
 }

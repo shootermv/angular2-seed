@@ -1,7 +1,8 @@
 import {Injectable} from 'angular2/core';
-
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import 'rxjs/Rx';
 export var FlotEntries: Array<number>[] = [
-    [1, 130],
+    [1, 10],
     [2, 40],
     [3, 80],
     [4, 160],
@@ -16,10 +17,14 @@ export var FlotEntries: Array<number>[] = [
 ];
 
 
-
-//@Injectable()
+ 
+@Injectable()
 export class FlotService {
+  constructor(public _http:Http) {
+    
+  }
   getFlotEntries() {
-    return FlotEntries;//Promise.resolve(FlotEntries);
+    return this._http.get('assets/mock/entries.json').map(response => response.json());
   }
 }
+///assets/mock/entries.json
