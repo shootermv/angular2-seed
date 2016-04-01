@@ -1,5 +1,5 @@
-import {Component, ElementRef, Input, AfterViewInit} from 'angular2/core';
-
+import {Component, ElementRef, Input} from 'angular2/core';
+import {EmitterService} from '../../../services/emitterService';
 @Component({
   selector: 'flot',
   template: `<div>loading</div>`
@@ -10,6 +10,7 @@ export class FlotCmp{
 
   private dataPlotted:any;
   static chosenInitialized = false;
+  private emitter:any;
   
   @Input() private  options: any;
   @Input() private  dataset:any;
@@ -28,8 +29,15 @@ export class FlotCmp{
         
         $.plot( plotArea, this.dataset, this.options);    
         FlotCmp.chosenInitialized = true;
+        this.emitter = EmitterService.get("channel_1");
+        this.emitter.subscribe(msg => {
+            console.log('MESSAGE:',msg);
+            $.plot( plotArea, this.dataset, this.options);
+          
+        });
       }
   } 
+  /*
   ngDoCheck() {
     if(this.dataset[0].data !== null && !this.dataPlotted) {
         console.log('plotting data');
@@ -37,5 +45,5 @@ export class FlotCmp{
         $.plot( plotArea, this.dataset, this.options);    
         this.dataPlotted = true; 
     }
-  }  
+  }  */
 }
