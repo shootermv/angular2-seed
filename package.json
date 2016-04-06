@@ -85,6 +85,7 @@
     "yargs": "^3.25.0"
   },
   "dependencies": {
+    "zone.js": "0.5.11",
     "angular2": "2.0.0-beta.0",
     "bootstrap": "^3.3.5",
     "es6-module-loader": "^0.17.8",
@@ -94,7 +95,6 @@
     "reflect-metadata": "^0.1.2",
     "rxjs": "5.0.0-beta.0",
     "simple-line-icons": "^2.2.3",
-    "systemjs": "^0.19.4",
-    "zone.js": "0.5.10"
+    "systemjs": "^0.19.4"    
   }
 }
