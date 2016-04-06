@@ -8,7 +8,7 @@
   "repository": {
     "url": "https://github.com/mgechev/angular2-seed"
   },
-  "scripts": {
+  "scripts": {  
     "build.dev": "gulp build.dev",
     "build.dev.watch": "gulp build.dev.watch",
     "build.prod": "gulp build.prod --env prod",
@@ -19,7 +19,7 @@
     "karma": "karma",
     "karma.start": "karma start",
     "lint": "gulp tslint",
-    "preinstall":"sudo npm install tsd -g",
+    "heroku-prebuild":"sudo npm install tsd -g",
     "postinstall": "tsd reinstall --clean && tsd link && tsd rebundle && gulp check.versions && gulp postinstall",
     "reinstall": "rimraf node_modules && npm cache clean && npm install",
     "start": "gulp serve --env dev",
