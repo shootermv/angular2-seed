@@ -2,6 +2,9 @@
   "name": "angular2-seed",
   "version": "0.0.0",
   "description": "Seed for Angular 2 apps",
+  "engines": {
+    "node": "5.8.0"
+  },
   "repository": {
     "url": "https://github.com/mgechev/angular2-seed"
   },
