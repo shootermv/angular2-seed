@@ -40,7 +40,6 @@ export const NPM_DEPENDENCIES = [
   { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST },
   { src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST },
   { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: LIB_DEST },
-  { src: 'ng2-bootstrap/ng2-bootstrap.js', inject: 'shims', dest: LIB_DEST },
 
   // Faster dev page load
   { src: 'rxjs/bundles/Rx.min.js', inject: 'libs', dest: LIB_DEST},
