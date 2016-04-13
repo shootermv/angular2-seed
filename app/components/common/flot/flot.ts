@@ -37,13 +37,5 @@ export class FlotCmp{
         });
       }
   } 
-  /*
-  ngDoCheck() {
-    if(this.dataset[0].data !== null && !this.dataPlotted) {
-        console.log('plotting data');
-        let plotArea = $(this.el.nativeElement).find('div').empty();
-        $.plot( plotArea, this.dataset, this.options);    
-        this.dataPlotted = true; 
-    }
-  }  */
+
 }
