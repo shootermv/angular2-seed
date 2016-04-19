@@ -19,7 +19,7 @@ export class DashboardCmp implements OnInit {
   private errorMessage:string;
   private emitter:any;
   constructor(private _flotService: FlotService) {
-    this.splineOptions ={
+    this.splineOptions = {
               series: {
                   lines: {
                       show: false
@@ -53,7 +53,7 @@ export class DashboardCmp implements OnInit {
                   min: 0,
                   max: 150, // optional: use it for a clear represetation
                   tickColor: '#eee',
-                  position: 'right',
+                  position: 'left',
                   tickFormatter: function (v) {
                       return v/* + ' visitors'*/;
                   }
