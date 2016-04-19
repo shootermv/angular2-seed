@@ -19,21 +19,53 @@ export class DashboardCmp implements OnInit {
   private errorMessage:string;
   private emitter:any;
   constructor(private _flotService: FlotService) {
-    this.splineOptions = {
-            series: {
-                lines: { show: true },
-                points: {
-                    radius: 3,
-                    show: true
-                }
-            }
-    };
-    this.dataset = [{label: 'line1',color:'blue',data:null}];
+    this.splineOptions ={
+              series: {
+                  lines: {
+                      show: false
+                  },
+                  points: {
+                      show: true,
+                      radius: 4
+                  },
+                  splines: {
+                      show: true,
+                      tension: 0.4,
+                      lineWidth: 1,
+                      fill: 0.5
+                  }
+              },
+              grid: {
+                  borderColor: '#eee',
+                  borderWidth: 1,
+                  hoverable: true,
+                  backgroundColor: '#fcfcfc'
+              },
+              tooltip: true,
+              tooltipOpts: {
+                  content: function (label, x, y) { return x + ' : ' + y; }
+              },
+              xaxis: {
+                  tickColor: '#fcfcfc',
+                  mode: 'categories'
+              },
+              yaxis: {
+                  min: 0,
+                  max: 150, // optional: use it for a clear represetation
+                  tickColor: '#eee',
+                  position: 'right',
+                  tickFormatter: function (v) {
+                      return v/* + ' visitors'*/;
+                  }
+              },
+              shadowSize: 0
+          };
+    this.dataset = [];
     this.emitter = EmitterService.get('channel_1');
   }//end of constructor
   getEntries() {
     this._flotService.getFlotEntries().subscribe(entries => {
-                         this.dataset[0].data = entries;
+                         this.dataset = entries;
                          this.emitter.emit('Broadcast');
                        },
                        error => { this.errorMessage = <any>error;});
