@@ -6,36 +6,35 @@ import {EmitterService} from '../../../services/emitterService';
 
 })
 
-export class FlotCmp{
+export class FlotCmp {
 
-  private dataPlotted:any;
-  static chosenInitialized = false;
+  private chosenInitialized = false;
   private emitter:any;
-  
+
   @Input() private  options: any;
   @Input() private  dataset:any;
   @Input() private  width:string= '100%';
   @Input() private  height:string = '220';
-      
+
   constructor(public el: ElementRef) {}
 
   ngOnInit() {
-      if(!FlotCmp.chosenInitialized) {
+      if(!this.chosenInitialized) {
         let plotArea = $(this.el.nativeElement).find('div').empty();
         plotArea.css({
-            width: this.width, 
+            width: this.width,
             height: this.height
         });
-        
-        $.plot( plotArea, this.dataset, this.options);    
-        FlotCmp.chosenInitialized = true;
-        this.emitter = EmitterService.get("channel_1");
+
+        $.plot( plotArea, this.dataset, this.options);
+        this.chosenInitialized = true;
+        this.emitter = EmitterService.get('channel_1');
         this.emitter.subscribe(msg => {
             console.log('MESSAGE:',msg);
             $.plot( plotArea, this.dataset, this.options);
-          
+
         });
       }
-  } 
+  }
 
 }
