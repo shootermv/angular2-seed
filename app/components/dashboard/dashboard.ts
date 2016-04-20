@@ -70,7 +70,7 @@ export class DashboardCmp implements OnInit {
                        },
                        error => { this.errorMessage = <any>error;});
   }
-  onChartRefresh() {
+  chartRefresh() {
     this.getEntries();
   }
   ngOnInit() {

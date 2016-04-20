@@ -89,8 +89,8 @@
                             <em  class="fa" [ngClass]="{'fa-minus': !isCollapsed, 'fa-plus': isCollapsed}" (click)="isCollapsed = !isCollapsed"></em>
                             <!--<em  class="fa fa-minus ng-no-animation"></em>-->
                         </a>
-                        <a href="#" > 
-                           <em class="fa fa-refresh" (click)="onChartRefresh();false"></em> 
+                        <a href="#" (click)="chartRefresh();false"> 
+                           <em class="fa fa-refresh" ></em> 
                         </a>
                     </paneltool>
                   <div class="panel-title">Inbound visitor statistics</div>
