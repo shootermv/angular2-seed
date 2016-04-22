@@ -1,0 +1,50 @@
+import {Component, OnInit, ElementRef, Renderer} from 'angular2/core'
+import { Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+@Component({
+  selector: 'preloader',
+  template: `
+     <div class="preloader-progress">
+      <div class="preloader-progress-bar" 
+             [ngStyle]="{width: loadCounter + \'%\'}"></div>
+     </div>
+  `
+})
+export class Preloader implements OnInit {
+  public loadCounter:number;
+  private counter:number; 
+  private timeout:any;
+  private viewloaded:boolean;
+  constructor(public el: ElementRef,
+  private renderer: Renderer,
+  private router: Router) {
+    this.loadCounter = 0;
+    this.counter  = 0;
+    this.setUpEvents();
+  }
+	private setUpEvents(): void {
+		this.router.subscribe((value: any) => this.onNext(value));
+	}
+
+	private onNext(value: any): void {
+	  setTimeout(()=>{ 
+		  this.endCounter();
+	  }, 2000);   
+	}   
+   
+  ngOnInit() { 
+     this.renderer.setElementClass(this.el.nativeElement, 'preloader', true);
+     this.startCounter();
+  }
+  endCounter() {
+    this.viewloaded = true;
+    this.loadCounter = 100;
+    this.renderer.setElementClass(this.el.nativeElement, 'preloader', false);
+  }
+
+  startCounter()  {
+       let remaining = 100 - this.counter;
+       this.counter = this.counter + (0.015 * Math.pow(1 - Math.sqrt(remaining), 2)); 
+       this.loadCounter = parseInt(this.counter.toString(), 10);
+       !this.viewloaded && setTimeout(()=>{this.startCounter();}, 20);
+  }
+}

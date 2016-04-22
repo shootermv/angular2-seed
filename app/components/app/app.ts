@@ -12,6 +12,7 @@ import {DashboardCmp} from '../dashboard/dashboard';
 import {NameList} from '../../services/name_list';
 import {TopNavbarCmp} from '../layout/top-navbar/top-navbar';
 import {SideBarCmp} from '../layout/sidebar/sidebar';
+import {Preloader} from '../common/preloader/preloader';
 
 @Component({
   selector: 'app',
@@ -19,7 +20,7 @@ import {SideBarCmp} from '../layout/sidebar/sidebar';
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [ROUTER_DIRECTIVES, TopNavbarCmp, SideBarCmp, AboutCmp, WidgetsCmp]
+  directives: [ROUTER_DIRECTIVES, TopNavbarCmp, SideBarCmp, AboutCmp, WidgetsCmp, Preloader]
 })
 @RouteConfig([
   { path: '/', component: DashboardCmp, as: 'Dashboard' },
