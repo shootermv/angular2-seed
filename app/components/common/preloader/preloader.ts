@@ -1,5 +1,5 @@
-import {Component, OnInit, ElementRef, Renderer} from 'angular2/core'
-import { Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, ElementRef, Renderer} from 'angular2/core';
+import {Router} from 'angular2/router';
 @Component({
   selector: 'preloader',
   template: `
@@ -11,8 +11,7 @@ import { Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 })
 export class Preloader implements OnInit {
   public loadCounter:number;
-  private counter:number; 
-  private timeout:any;
+  private counter:number;
   private viewloaded:boolean;
   constructor(public el: ElementRef,
   private renderer: Renderer,
@@ -21,17 +20,8 @@ export class Preloader implements OnInit {
     this.counter  = 0;
     this.setUpEvents();
   }
-	private setUpEvents(): void {
-		this.router.subscribe((value: any) => this.onNext(value));
-	}
 
-	private onNext(value: any): void {
-	  setTimeout(()=>{ 
-		  this.endCounter();
-	  }, 2000);   
-	}   
-   
-  ngOnInit() { 
+  ngOnInit() {
      this.renderer.setElementClass(this.el.nativeElement, 'preloader', true);
      this.startCounter();
   }
@@ -43,8 +33,18 @@ export class Preloader implements OnInit {
 
   startCounter()  {
        let remaining = 100 - this.counter;
-       this.counter = this.counter + (0.015 * Math.pow(1 - Math.sqrt(remaining), 2)); 
+       this.counter = this.counter + (0.015 * Math.pow(1 - Math.sqrt(remaining), 2));
        this.loadCounter = parseInt(this.counter.toString(), 10);
-       !this.viewloaded && setTimeout(()=>{this.startCounter();}, 20);
+       if(!this.viewloaded) { setTimeout(() => {this.startCounter();}, 20); }
   }
+
+	private setUpEvents(): void {
+		this.router.subscribe((value: any) => this.onNext(value));
+	}
+
+	private onNext(value: any): void {
+	  setTimeout(() => {
+		  this.endCounter();
+	  }, 2000);
+	}
 }
