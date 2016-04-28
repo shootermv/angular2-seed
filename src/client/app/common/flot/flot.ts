@@ -1,22 +1,22 @@
 import {Component, ElementRef, Input} from 'angular2/core';
-import {EmitterService} from 'app/shared/services/emitterService';
+import {EmitterService} from '../../shared/services/emitterService';
 @Component({
   selector: 'flot',
-  template: `<div>loading</div>`
-
+  template: `<div>loading</div>`,
+  providers:[EmitterService]
 })
 
 export class FlotCmp {
 
   private chosenInitialized = false;
-  private emitter:any;
+  
 
   @Input() private  options: any;
   @Input() private  dataset:any;
   @Input() private  width:string= '100%';
   @Input() private  height:string = '220';
 
-  constructor(public el: ElementRef) {}
+  constructor(public el: ElementRef, public emitter: EmitterService) {}
 
   ngOnInit() {
       if(!this.chosenInitialized) {
