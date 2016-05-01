@@ -66,11 +66,13 @@ export class DashboardCmp implements OnInit {
   getEntries() {
     this._flotService.getFlotEntries().subscribe(entries => {
                          this.dataset = entries;
+                         document.querySelector('flot').className = document.querySelector('flot').className.replace('whirl' + ' ' + 'traditional', ''); 
                          this.emitter.emit('Broadcast');
                        },
                        error => { this.errorMessage = <any>error;});
   }
   chartRefresh() {
+    document.querySelector('flot').className = document.querySelector('flot').className +'whirl' + ' ' + 'traditional';
     this.getEntries();
   }
   ngOnInit() {

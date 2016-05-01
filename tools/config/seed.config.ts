@@ -65,7 +65,8 @@ export class SeedConfig {
     { src: 'flot-spline/js/jquery.flot.spline.js', inject: 'libs',  env: ENVIRONMENTS.DEVELOPMENT},
     { src: 'simple-line-icons/css/simple-line-icons.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT},
     { src: 'font-awesome/css/font-awesome.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT }    
+    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT }, 
+    { src: 'whirl/dist/whirl.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT }  
   ];
 
   // Declare local files that needs to be injected
