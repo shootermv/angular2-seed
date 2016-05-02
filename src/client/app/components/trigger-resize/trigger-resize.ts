@@ -1,8 +1,10 @@
-import {Component} from 'angular2/core';
+import {Directive} from 'angular2/core';
 
-@Component({
+@Directive({
   selector: '[trigger-resize]',
-  templateUrl: 'app/components/trigger-resize/trigger-resize.html'
+  host: {
+    '(click)': 'onClickMe($event)'
+  }
 })
 export class TriggerResize {
   onClickMe(event) {
