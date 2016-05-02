@@ -1,7 +1,5 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
-import {NavbarComponent} from './navbar.component';
-import {ToolbarComponent} from './toolbar.component';
 import {NameListService} from '../shared/index';
 import {TopNavbarCmp} from './top-navbar/top-navbar';
 import {SideBarCmp} from './sidebar/sidebar';
@@ -13,7 +11,7 @@ import {Preloader} from '../common/preloader/preloader';
   selector: 'sd-app',
   viewProviders: [NameListService],
   templateUrl: 'app/components/app.component.html',
-  directives: [ROUTER_DIRECTIVES, Preloader, NavbarComponent, ToolbarComponent, SideBarCmp, TopNavbarCmp, WidgetsCmp, DashboardCmp]
+  directives: [ROUTER_DIRECTIVES, Preloader, SideBarCmp, TopNavbarCmp, WidgetsCmp, DashboardCmp]
 })
 @RouteConfig([
   { path: '/', component: DashboardCmp, as: 'Dashboard' },

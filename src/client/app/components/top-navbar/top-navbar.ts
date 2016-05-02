@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {TriggerResize} from 'app/components/trigger-resize/trigger-resize';
+import {TriggerResize} from '../trigger-resize/trigger-resize';
 
 @Component({
   selector: 'top-navbar',
