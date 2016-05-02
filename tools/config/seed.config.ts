@@ -59,14 +59,14 @@ export class SeedConfig {
     { src: 'angular2/bundles/angular2.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/router.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'jquery/dist/jquery.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'flot/jquery.flot.js', inject: 'libs',  env: ENVIRONMENTS.DEVELOPMENT},
-    { src: 'flot/jquery.flot.categories.js', inject: 'libs',  env: ENVIRONMENTS.DEVELOPMENT},
-    { src: 'flot-spline/js/jquery.flot.spline.js', inject: 'libs',  env: ENVIRONMENTS.DEVELOPMENT},
-    { src: 'simple-line-icons/css/simple-line-icons.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT},
-    { src: 'font-awesome/css/font-awesome.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT }, 
-    { src: 'whirl/dist/whirl.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT }  
+    { src: 'jquery/dist/jquery.js', inject: 'libs' },
+    { src: 'flot/jquery.flot.js', inject: 'libs'},
+    { src: 'flot/jquery.flot.categories.js', inject: 'libs'},
+    { src: 'flot-spline/js/jquery.flot.spline.js', inject: 'libs'},
+    { src: 'simple-line-icons/css/simple-line-icons.css', inject: true},
+    { src: 'font-awesome/css/font-awesome.css', inject: true },
+    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true}, 
+    { src: 'whirl/dist/whirl.css', inject: true }  
   ];
 
   // Declare local files that needs to be injected
