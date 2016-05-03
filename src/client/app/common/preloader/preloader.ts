@@ -25,10 +25,12 @@ export class Preloader implements OnInit {
      this.renderer.setElementClass(this.el.nativeElement, 'preloader', true);
      this.startCounter();
   }
-  endCounter() {
-    this.viewloaded = true;
+  endCounter() {    
     this.loadCounter = 100;
-    this.renderer.setElementClass(this.el.nativeElement, 'preloader', false);
+    setTimeout(() => {
+      this.viewloaded = true;
+      this.renderer.setElementClass(this.el.nativeElement, 'preloader', false);
+    }, 100);  
   }
 
   startCounter()  {
