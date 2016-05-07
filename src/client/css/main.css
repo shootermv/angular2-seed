@@ -97,10 +97,17 @@
 12. Documentation
   12.1 docs
 
+
  ========================================================================== */
 /* ========================================================================
    Component: bootstrap-reset.less
  ========================================================================== */
+undefined{
+  padding:0 !important;
+}
+
+
+
 .glyphicon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;

@@ -6,6 +6,8 @@ import {SideBarCmp} from './sidebar/sidebar';
 import {WidgetsCmp} from '../widgets/widgets';
 import {DashboardCmp} from '../dashboard/dashboard';
 import {Preloader} from '../common/preloader/preloader';
+import {LayoutComponent} from '../layout/index';
+import {PagesComponent} from '../pages/index';
 
 @Component({
   selector: 'sd-app',
@@ -14,8 +16,19 @@ import {Preloader} from '../common/preloader/preloader';
   directives: [ROUTER_DIRECTIVES, Preloader, SideBarCmp, TopNavbarCmp, WidgetsCmp, DashboardCmp]
 })
 @RouteConfig([
-  { path: '/', component: DashboardCmp, as: 'Dashboard' },
-  { path: '/dashboard', component: DashboardCmp, as: 'Dashboard' },
-  { path: '/widgets', component: WidgetsCmp, as: 'Widgets' }
+  {
+    path: '/layout/...',
+    name: 'Layout',
+    component: LayoutComponent
+  },
+  {
+    path: '/pages/...',
+    name: 'Pages',
+    component: PagesComponent
+  },
+  {
+    path: '/**',
+    redirectTo: ['Layout']
+  }
 ])
 export class AppComponent {}

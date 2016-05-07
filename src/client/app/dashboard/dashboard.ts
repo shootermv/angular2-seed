@@ -5,7 +5,7 @@ import {FlotCmp} from '../common/flot/flot';
 import {CollapseCmp} from '../common/my-collapse/my-collapse';
 import {FlotService} from '../shared/services/flotService';
 import {EmitterService} from '../shared/services/emitterService';
-import { HTTP_PROVIDERS} from 'angular2/http';
+import {HTTP_PROVIDERS} from 'angular2/http';
 @Component({
   selector: 'dashboard',
   templateUrl: 'app/dashboard/dashboard.html',
