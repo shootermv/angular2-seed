@@ -5,7 +5,7 @@ import {
 
 @Component({
   selector: 'sidebar',
-  templateUrl: 'app/components/sidebar/sidebar.html',
+  templateUrl: 'app/layout/components/sidebar/sidebar.html',
   directives: [ROUTER_DIRECTIVES]
 })
 export class SideBarCmp {

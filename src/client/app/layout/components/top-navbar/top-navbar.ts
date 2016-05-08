@@ -3,7 +3,7 @@ import {TriggerResize} from '../trigger-resize/trigger-resize';
 
 @Component({
   selector: 'top-navbar',
-  templateUrl: 'app/components/top-navbar/top-navbar.html',
+  templateUrl: 'app/layout/components/top-navbar/top-navbar.html',
   directives: [TriggerResize]
 })
 export class TopNavbarCmp {
