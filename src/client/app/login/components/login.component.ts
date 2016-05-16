@@ -6,7 +6,8 @@ import {ComponentInstruction, Router, Location, OnActivate} from 'angular2/route
 })
 export class LoginComponent {
   constructor(public router: Router) {}
-  login() {
-   this.router.navigateByUrl('/layout');
+  login(event:any, useremail:string, password:string) {
+    alert(useremail)
+   //this.router.navigateByUrl('/layout');
   }
 }
