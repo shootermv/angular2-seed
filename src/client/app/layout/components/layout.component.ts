@@ -9,7 +9,7 @@ import {DashboardCmp} from '../../dashboard/dashboard';
 import {WidgetsCmp} from '../../widgets/widgets';
 
 @Component({
-
+  selector:'layout',
   templateUrl: 'app/layout/components/layout.component.html',
   styleUrls: ['app/layout/components/layout.component.css'],
   directives: [
@@ -26,6 +26,7 @@ import {WidgetsCmp} from '../../widgets/widgets';
 
 @RouteConfig([
   {
+    
     path: '/',
     name: 'Dashboard',
     component: DashboardCmp,

@@ -5,6 +5,7 @@ import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {LoginComponent} from '../../login/index';
 import {RegisterComponent} from '../../register/index';
 @Component({
+  selector:'pages',
   templateUrl: 'app/pages/components/pages.component.html',
   styleUrls: ['app/pages/components/pages.component.css'],
   directives: [
