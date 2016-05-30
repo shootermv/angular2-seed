@@ -1,6 +1,6 @@
 import {argv} from 'yargs';
 import {join} from 'path';
-import {InjectableDependency, Environments} from './seed.config.interfaces';
+import {InjectableDependency, Environments, SassOptions} from './seed.config.interfaces';
 
 export const ENVIRONMENTS: Environments = {
   DEVELOPMENT: 'dev',
@@ -26,7 +26,7 @@ export class SeedConfig {
 
   APP_SRC              = 'src/client';
   ASSETS_SRC           = `${this.APP_SRC}/assets`;
-  CSS_SRC              = `${this.APP_SRC}/css`;
+  CSS_SRC              = `${this.APP_SRC}/assets`;
 
   TOOLS_DIR            = 'tools';
   SEED_TASKS_DIR       = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'seed');
@@ -64,14 +64,14 @@ export class SeedConfig {
     { src: 'flot/jquery.flot.categories.js', inject: 'libs'},
     { src: 'flot-spline/js/jquery.flot.spline.js', inject: 'libs'},
     { src: 'simple-line-icons/css/simple-line-icons.css', inject: true},
-    { src: 'font-awesome/css/font-awesome.css', inject: true },
-    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true}, 
+    { src: 'font-awesome/css/font-awesome.css', inject: true },    
+    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true},
     { src: 'whirl/dist/whirl.css', inject: true }  
   ];
 
   // Declare local files that needs to be injected
   APP_ASSETS: InjectableDependency[] = [
-    { src: `${this.CSS_SRC}/main.css`, inject: true, vendor: false }
+    { src: `${this.CSS_SRC}/main.scss`, inject: true, vendor: false }
   ];
 
   get DEPENDENCIES(): InjectableDependency[] {
@@ -100,6 +100,8 @@ export class SeedConfig {
 
   SYSTEM_CONFIG = this.SYSTEM_CONFIG_DEV;
 
+  SASS_OPTIONS: SassOptions = {
+  };
   SYSTEM_BUILDER_CONFIG = {
     defaultJSExtensions: true,
     packageConfigPaths: [join(this.PROJECT_ROOT, 'node_modules', '*', 'package.json')],
